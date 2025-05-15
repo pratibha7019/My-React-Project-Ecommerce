@@ -6,11 +6,21 @@ export default function ProductCard({ product }) {
     const navigate = useNavigate();
     const goToDetails = () => navigate(`/product/${product.id}`);
 
+    // Brand colors
+    const brandColors = {
+        darkViolet: "#5F4B8B", // Dark violet
+        lightViolet: "#9B7DFF", // Light violet
+        neonGreen: "#39FF14",   // Neon green for hover
+        darkGrey: "#333333",    // Dark grey for text
+        lightGrey: "#F4F4F4",   // Light grey for background
+        white: "#FFFFFF",       // White
+    };
+
     // Styles
     const cardStyle = {
         width: "250px",
-        backgroundColor: "#fff",
-        color: "#333",
+        backgroundColor: brandColors.white,
+        color: brandColors.darkGrey,
         borderRadius: "8px",
         boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)",
         overflow: "hidden",
@@ -19,6 +29,7 @@ export default function ProductCard({ product }) {
         display: "flex",
         flexDirection: "column",
         transition: "transform 0.3s ease",
+        gap: "10px", // Gap between elements
     };
 
     const clickableStyle = {
@@ -28,7 +39,7 @@ export default function ProductCard({ product }) {
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
-        height: "100%"
+        height: "100%",
     };
 
     const imageStyle = {
@@ -36,32 +47,32 @@ export default function ProductCard({ product }) {
         height: "200px",
         objectFit: "cover",
         borderRadius: "8px",
-        transition: "transform 0.3s ease"
+        transition: "transform 0.3s ease",
     };
 
     const titleStyle = {
         fontSize: "16px",
         fontWeight: "bold",
         margin: "10px 0",
-        color: "#333"
+        color: brandColors.darkGrey,
     };
 
     const priceStyle = {
-        color: "#FF5722", // e-commerce standard price color
+        color: brandColors.Violet, // Using  violet for price
         fontSize: "18px",
         marginBottom: "8px",
     };
 
     const detailsText = {
-        color: "#888",
+        color: brandColors.lightGrey,
         fontSize: "14px",
         marginTop: "8px",
-        fontWeight: "normal"
+        fontWeight: "normal",
     };
 
     const buttonStyle = {
-        backgroundColor: "#FF5722", // standard orange for action
-        color: "#fff",
+        backgroundColor: brandColors.voilet, // Dark violet button color
+        color: brandColors.white,
         border: "none",
         padding: "12px 0",
         fontSize: "16px",
@@ -74,7 +85,7 @@ export default function ProductCard({ product }) {
     };
 
     const handleHover = (e, hover) => {
-        e.target.style.backgroundColor = hover ? "#e55e2a" : "#FF5722";
+        e.target.style.backgroundColor = hover ? brandColors.neonGreen : brandColors.darkViolet;
     };
 
     return (
@@ -100,3 +111,4 @@ export default function ProductCard({ product }) {
         </div>
     );
 }
+

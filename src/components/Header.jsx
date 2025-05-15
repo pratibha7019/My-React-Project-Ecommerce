@@ -44,7 +44,7 @@ export default function Header() {
 
     return (
         <header style={headerStyle}>
-            <Link to="/" style={logoStyle}>CodeShop</Link>
+            <Link to="/" style={logoStyle}>Snapbuy</Link>
             <Link to="/cart" style={cartLinkStyle}>
                 🛒 Cart
                 <span style={cartCountStyle}>{cart.length}</span>
